@@ -51,8 +51,8 @@
 ### Получение ссылок
 
     GET
-    https://{SERVICE_URL}/api/links?api_token={token}
-    https://{SERVICE_URL}/api/links?search={query}&api_token={token}
+    {SERVICE_URL}/api/links?api_token={token}
+    {SERVICE_URL}/api/links?search={query}&api_token={token}
 
 В ответ получаем список ссылок, соответствующих условию (не более 50 штук). Есть возможность поиска по колонке `url` в
 формате `LIKE %query%` &mdash; для этого нужно добавить get-параметр `search`.
@@ -60,7 +60,7 @@
 ### Информация об отдельной ссылке
 
     GET
-    https://{SERVICE_URL}/api/links/{id}?api_token={token}
+    {SERVICE_URL}/api/links/{id}?api_token={token}
 
 В ответ получаем информацию об отдельной ссылке или пустой JSON. Возможные коды ответа:
 
@@ -70,7 +70,7 @@
 ### Добавление новой ссылки
 
     POST
-    https://{SERVICE_URL}/api/links?api_token={token}
+    {SERVICE_URL}/api/links?api_token={token}
 
 В теле запроса необходимо указать обязательный параметр `url` (целевой адрес ссылки). Также можно указать необязательный
 параметр `banned` (заблокирована ссылка или нет), по умолчанию ссылка не будет считаться заблокированной. Оба параметра
@@ -85,7 +85,7 @@
 ### Блокировка ссылки
 
     PATCH
-    https://{SERVICE_URL}/api/links/{id}/ban?api_token={token}
+    {SERVICE_URL}/api/links/{id}/ban?api_token={token}
 
 Выполняется блокировка ссылки с указанным идентификатором. Тело запроса не учитывается. Возможные коды ответа:
 
